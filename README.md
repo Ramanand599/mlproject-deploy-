@@ -13,3 +13,9 @@ git add.
 ```bash
 git commit -m "first commit"
 ```
+```bash
+git branch -M main
+```
+```
+git remote add origin https://github.com/<username>/<projectname>-.git
+```
