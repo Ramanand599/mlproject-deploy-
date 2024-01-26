@@ -3,7 +3,7 @@ STEP 1:
 conda create -p envname python==3.8 -y
 ```
 SETP 2:
-create a new repository on the command line
+create a new repository on the command line and push all the changes during project creation.
 ```bash
 git init
 ```
