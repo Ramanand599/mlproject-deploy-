@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass  # Decoretors
 class DataIngestionConfig:
     train_data_path : str=os.path.join("artifacts","train.csv")
     test_data_path : str=os.path.join("artifacts","test.csv")
@@ -28,10 +28,12 @@ class DataIngestion:
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
             logging.info("Train test split initiated")
 
-            train_set,test_set = train_test_split(df,test_size=0.2,random_state=42)
+            train_set,test_set = train_test_split(df,test_size=0.2,random_state=42) # Splited into train set and test set
+
             train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
             train_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
             logging.info("Ingestion of the data is completed.")
+            
             return (
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
