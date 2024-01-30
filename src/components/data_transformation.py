@@ -59,4 +59,23 @@ class DataTransformation:
 
         except Exception as e:
             raise CustomException(e,sys)
+        
+    def initiate_data_transformation(self,train_path,test_path):
+        try:
+            train_df = pd.read_csv(train_path)
+            test_df = pd.read_csv(test_path)
+            logging.info("Read train and test completed.")
+            logging.info("Obtaining preprocessing object.")
+            preprocessing_obj = self.get_data_transformation_object()
+            target_column_name = "math_score"
+            numerical_columns = ["writing_score","reading_score"]
+            input_feature_train_df = train_df.drop
+
+        except:
+            pass
+        
+
+if __name__ == "__main__":
+    obj = DataTransformation()
+    obj.get_data_transformation_object()
             
