@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.compose import ColumnTransformer  # used to create a pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
-
+from src.utils import save_object
 
 from src.exception import CustomException
 from src.logger import logging
@@ -87,7 +87,7 @@ class DataTransformation:
             train_arr = np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
             logging.info(f"Saved preprocessing object.")
-            
+
             save_object(
                 file_path = self.data_transformation_config.preprocessor_obj_file_path,
                 obj = preprocessing_obj
