@@ -102,9 +102,5 @@ class DataTransformation:
 
         except:
             pass
-        
 
-if __name__ == "__main__":
-    obj = DataTransformation()
-    obj.get_data_transformation_object()
             
